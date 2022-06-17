@@ -688,7 +688,7 @@ public void setArray(int i, Array x) throws SQLException {s.setArray(i,x);}
 	 * @param length the number of bytes in the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void setAsciiStream(int parameterIndex, java.io.InputStream x, int length) throws SQLException {
+public void setAsciiStream(int parameterIndex, InputStream x, int length) throws SQLException {
 	s.setAsciiStream(parameterIndex,x,length);
 }
 	/**
@@ -720,7 +720,7 @@ public void setBigDecimal(int parameterIndex, java.math.BigDecimal x) throws SQL
 	 * @param length the number of bytes in the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void setBinaryStream(int parameterIndex, java.io.InputStream x, int length) throws SQLException {
+public void setBinaryStream(int parameterIndex, InputStream x, int length) throws SQLException {
 	s.setBinaryStream(parameterIndex,x,length);
 }
 	/**
@@ -782,7 +782,7 @@ public void setBytes(int parameterIndex, byte[] x) throws SQLException {s.setByt
 	 * @param length the number of characters in the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void setCharacterStream(int parameterIndex, java.io.Reader reader, int length) throws SQLException {
+public void setCharacterStream(int parameterIndex, Reader reader, int length) throws SQLException {
 	s.setCharacterStream(parameterIndex,reader,length);
 }
 	/**
@@ -1370,7 +1370,7 @@ public void setTimestamp(int parameterIndex, Timestamp x, java.util.Calendar cal
 	 * @exception SQLException if a database access error occurs
 	 * @deprecated
 	 */
-public void setUnicodeStream(int parameterIndex, java.io.InputStream x, int length) throws SQLException {
+public void setUnicodeStream(int parameterIndex, InputStream x, int length) throws SQLException {
 	System.err.println("PreparedSpatialStatement.setUnicodeStream(int,InputStream,int) is not implemented!");
 }
     /**
@@ -1410,6 +1410,17 @@ public ParameterMetaData getParameterMetaData() throws SQLException {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void closeOnCompletion() throws SQLException {
+
+	}
+
+	@Override
+	public boolean isCloseOnCompletion() throws SQLException {
+		return false;
+	}
+
 	public void setPoolable(boolean arg0) throws SQLException {
 		// TODO Auto-generated method stub
 		

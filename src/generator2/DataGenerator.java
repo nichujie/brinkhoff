@@ -31,7 +31,7 @@ import util.*;
  * @version	1.00	16.01.2000	first version
  * @author FH Oldenburg
  */
-public abstract class DataGenerator extends ShowNetworkMap implements java.awt.event.AdjustmentListener {
+public abstract class DataGenerator extends ShowNetworkMap implements AdjustmentListener {
 
 	/**
 	 * Properties of the data generator
@@ -308,7 +308,7 @@ protected void addComponentsToListeners () {
  * Reacts on an adjustment event.
  * @param e adjustment event
  */
-public void adjustmentValueChanged (java.awt.event.AdjustmentEvent e) {
+public void adjustmentValueChanged (AdjustmentEvent e) {
 	if ((e.getSource() == getTimeScrollbar()) && (time != null)) {
 		int newTime = e.getValue() * time.getMaxTime() / (timeScrollbar.getMaximum()-timeScrollbar.getVisibleAmount());
 		if (newTime != actTime); {

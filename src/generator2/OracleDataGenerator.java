@@ -27,7 +27,7 @@ public Reporter createReporter (Properties properties, DrawableObjects objects) 
  * main entrypoint - starts the part when it is run as an application
  * @param args args[0] = name of the property file
  */
-public static void main(java.lang.String[] args) {
+public static void main(String[] args) {
 	if ((args.length > 0) && (args[0] != null))
 		propFilename = makeAbsolute(args[0]);
 	DataGenerator.main ("generator2.OracleDataGenerator");

@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.*;
+import java.nio.file.Path;
 import java.util.zip.*;
 import drawables.*;
 import util.*;
@@ -203,7 +204,7 @@ public abstract class ShowMap extends Applet implements ActionListener, ItemList
  * Event handling for the ActionListener interface.
  * @param e the event
  */
-public void actionPerformed (java.awt.event.ActionEvent e) {
+public void actionPerformed (ActionEvent e) {
 	if (e.getSource() == getZoomInButton())
 		zoomIn();
 	if (e.getSource() == getZoomOutButton())
@@ -335,8 +336,9 @@ protected URL computeURL (String name) {
 		}
 		if (name.indexOf(':') > 0)
 			return new URL("file:/"+name.replace('\\','/'));
-		String docBase = this.getCodeBase().toString();
-		return new URL(docBase+name.replace('\\','/'));
+//		String docBase = this.getCodeBase().toString();
+		return Path.of(name).toUri().toURL();
+//		return new URL(name.replace('\\','/'));
 	}
 	catch (MalformedURLException me) {
 		System.err.println("MalformedURLException: " + me);
@@ -518,7 +520,7 @@ protected Button getNorthButton() {
  * Gibt Informationen �ber die unterst�tzten Parameter zur�ck.
  * @return Parameter-Info in String-Array.
  */
-public java.lang.String[][] getParameterInfo() {
+public String[][] getParameterInfo() {
 	String[][] info = {
 		{"name of parameter", "type of parameter", "see: ShowMapParameters.html"},
 	};
@@ -765,7 +767,7 @@ protected void interpretParameters () {
  * Methode zur Behandlung von StateChanged-Events f�r das ItemListener-Interface.
  * @param e akt. Event
  */
-public void itemStateChanged (java.awt.event.ItemEvent e) {
+public void itemStateChanged (ItemEvent e) {
 	if ((e.getSource() == getUnicodeCheckbox()) ) {
 		if (unicodeSupported)
 			setUnicode(getUnicodeCheckbox().getState());
@@ -782,7 +784,7 @@ protected void loadDrawables () {
  * Methode zur Behandlung vom mouseClicked-Event f�r das MouseListener-Interface.
  * @param e akt. Event
  */
-public void mouseClicked (java.awt.event.MouseEvent e) {
+public void mouseClicked (MouseEvent e) {
 	if ((e.getSource() == this) ) {
 		// Falls Shift-Taste gedr�ckt, Position anpassen
 		if (e.isShiftDown())
@@ -812,13 +814,13 @@ public void mouseDragged (MouseEvent e) {
  * Methode zur Behandlung vom mouseEntered-Event f�r das MouseListener-Interface.
  * @param e akt. Event
  */
-public void mouseEntered (java.awt.event.MouseEvent e) {
+public void mouseEntered (MouseEvent e) {
 }
 /**
  * Methode zur Behandlung vom mouseExited-Event f�r das MouseListener-Interface.
  * @param e akt. Event
  */
-public void mouseExited (java.awt.event.MouseEvent e) {
+public void mouseExited (MouseEvent e) {
 }
 /**
  * Methode zur Behandlung vom mouseMoved-Event f�r das MouseMotionerListener-Interface.
@@ -858,7 +860,7 @@ public void mousePressed (MouseEvent e) {
  * Methode zur Behandlung vom mouseReleased-Event f�r das MouseListener-Interface.
  * @param e akt. Event
  */
-public void mouseReleased (java.awt.event.MouseEvent e) {
+public void mouseReleased (MouseEvent e) {
 	if ((e.getSource() == this) ) {
 		// DragBox l�schen
 		paintDragBox (lastMouseXPos, lastMouseYPos, lastDragXPos,lastDragYPos);

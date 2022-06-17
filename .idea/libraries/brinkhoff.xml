@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="brinkhoff">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/classes12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sdoapi.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

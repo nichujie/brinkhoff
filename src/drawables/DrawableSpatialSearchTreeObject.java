@@ -10,7 +10,7 @@ import spatial.*;
  * @version	1.00	05.10.2002	first version
  * @author Thomas Brinkhoff
  */
-public class DrawableSpatialSearchTreeObject implements spatial.VisualizedSpatialSearchTreeObject, spatial.MovingSpatialSearchTreeObject, LayerSpatialSearchTreeObject {
+public class DrawableSpatialSearchTreeObject implements VisualizedSpatialSearchTreeObject, MovingSpatialSearchTreeObject, LayerSpatialSearchTreeObject {
 
 	/**
 	 * The drawable primitive.

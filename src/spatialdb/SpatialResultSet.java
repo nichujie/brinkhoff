@@ -217,7 +217,7 @@ public Array getArray(String colName) throws SQLException {
 	 * then the result is null.  
 	 * @exception SQLException if a database access error occurs
 	 */
-public java.io.InputStream getAsciiStream(int columnIndex) throws SQLException {
+public InputStream getAsciiStream(int columnIndex) throws SQLException {
 	return s.getAsciiStream(columnIndex);
 }
 	/**
@@ -240,7 +240,7 @@ public java.io.InputStream getAsciiStream(int columnIndex) throws SQLException {
 	 * then the result is null.
 	 * @exception SQLException if a database access error occurs
 	 */
-public java.io.InputStream getAsciiStream(String columnName) throws SQLException {
+public InputStream getAsciiStream(String columnName) throws SQLException {
 	return s.getAsciiStream(columnName);
 }
 	/**
@@ -317,7 +317,7 @@ public java.math.BigDecimal getBigDecimal(String columnName, int scale) throws S
 	 * then the result is null.  
 	 * @exception SQLException if a database access error occurs
 	 */
-public java.io.InputStream getBinaryStream(int columnIndex) throws SQLException {
+public InputStream getBinaryStream(int columnIndex) throws SQLException {
 	return s.getBinaryStream(columnIndex);
 }
 	/**
@@ -341,7 +341,7 @@ public java.io.InputStream getBinaryStream(int columnIndex) throws SQLException 
 	 * then the result is null.
 	 * @exception SQLException if a database access error occurs
 	 */
-public java.io.InputStream getBinaryStream(String columnName) throws SQLException {
+public InputStream getBinaryStream(String columnName) throws SQLException {
 	return s.getBinaryStream(columnName);
 }
 	/**
@@ -436,7 +436,7 @@ public byte[] getBytes(String columnName) throws SQLException {
 	 * <p>Gets the value of a column in the current row as a java.io.Reader.
 	 * @param columnIndex the first column is 1, the second is 2, ...
 	 */
-public java.io.Reader getCharacterStream(int columnIndex) throws SQLException {
+public Reader getCharacterStream(int columnIndex) throws SQLException {
 	return s.getCharacterStream(columnIndex);
 }
 	/**
@@ -446,7 +446,7 @@ public java.io.Reader getCharacterStream(int columnIndex) throws SQLException {
 	 * @param columnName the name of the column
 	 * @return the value in the specified column as a <code>java.io.Reader</code>
 	 */
-public java.io.Reader getCharacterStream(String columnName) throws SQLException {
+public Reader getCharacterStream(String columnName) throws SQLException {
 	return s.getCharacterStream(columnName);
 }
 	/**
@@ -1053,7 +1053,7 @@ public int getType() throws SQLException {
 	 * @exception SQLException if a database access error occurs
 	 * @deprecated
 	 */
-public java.io.InputStream getUnicodeStream(int columnIndex) throws SQLException {
+public InputStream getUnicodeStream(int columnIndex) throws SQLException {
 	System.err.println("SpatialResultSet.getUnicodeStream(int) is not implemented.");
 	return null;
 }
@@ -1080,7 +1080,7 @@ public java.io.InputStream getUnicodeStream(int columnIndex) throws SQLException
 	 * @exception SQLException if a database access error occurs
 	 * @deprecated
 	 */
-public java.io.InputStream getUnicodeStream(String columnName) throws SQLException {
+public InputStream getUnicodeStream(String columnName) throws SQLException {
 	System.err.println("SpatialResultSet.getUnicodeStream(String) is not implemented.");
 	return null;
 }
@@ -1419,7 +1419,7 @@ public void setFetchSize(int rows) throws SQLException {s.setFetchSize(rows);}
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateArray(int columnIndex, java.sql.Array x) throws SQLException {
+public void updateArray(int columnIndex, Array x) throws SQLException {
 	System.err.println("SpatialResultSet.updateArray(int,Array) is not implemented.");
 }
     /** 
@@ -1433,7 +1433,7 @@ public void updateArray(int columnIndex, java.sql.Array x) throws SQLException {
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateArray(String columnName, java.sql.Array x) throws SQLException {
+public void updateArray(String columnName, Array x) throws SQLException {
 	System.err.println("SpatialResultSet.updateArray(String,Array) is not implemented.");
 }
 	/** 
@@ -1451,7 +1451,7 @@ public void updateArray(String columnName, java.sql.Array x) throws SQLException
 	 * @param length the length of the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void updateAsciiStream(int columnIndex, java.io.InputStream x, int length) throws SQLException {
+public void updateAsciiStream(int columnIndex, InputStream x, int length) throws SQLException {
 	s.updateAsciiStream(columnIndex,x,length);
 }
 	/** 
@@ -1469,7 +1469,7 @@ public void updateAsciiStream(int columnIndex, java.io.InputStream x, int length
 	 * @param length of the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void updateAsciiStream(String columnName, java.io.InputStream x, int length) throws SQLException {
+public void updateAsciiStream(String columnName, InputStream x, int length) throws SQLException {
 	s.updateAsciiStream(columnName,x,length);
 }
 	/**
@@ -1521,7 +1521,7 @@ public void updateBigDecimal(String columnName, java.math.BigDecimal x) throws S
 	 * @param length the length of the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void updateBinaryStream(int columnIndex, java.io.InputStream x, int length) throws SQLException {
+public void updateBinaryStream(int columnIndex, InputStream x, int length) throws SQLException {
 	s.updateBinaryStream(columnIndex,x,length);
 }
 	/** 
@@ -1539,7 +1539,7 @@ public void updateBinaryStream(int columnIndex, java.io.InputStream x, int lengt
 	 * @param length of the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void updateBinaryStream(String columnName, java.io.InputStream x, int length) throws SQLException {
+public void updateBinaryStream(String columnName, InputStream x, int length) throws SQLException {
 	s.updateBinaryStream(columnName,x,length);
 }
     /**
@@ -1553,7 +1553,7 @@ public void updateBinaryStream(String columnName, java.io.InputStream x, int len
      * @param x the new column value
      * @exception SQLException if a database access error occurs
       */
-public void updateBlob(int columnIndex, java.sql.Blob x) throws SQLException {
+public void updateBlob(int columnIndex, Blob x) throws SQLException {
 	System.err.println("SpatialResultSet.updateBlob(int,Blob) is not implemented.");
 }
     /** 
@@ -1567,7 +1567,7 @@ public void updateBlob(int columnIndex, java.sql.Blob x) throws SQLException {
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateBlob(String columnName, java.sql.Blob x) throws SQLException {
+public void updateBlob(String columnName, Blob x) throws SQLException {
 	System.err.println("SpatialResultSet.updateBlob(String,Blob) is not implemented.");
 }
 	/**
@@ -1687,7 +1687,7 @@ public void updateBytes(String columnName, byte[] x) throws SQLException {
 	 * @param length the length of the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void updateCharacterStream(int columnIndex, java.io.Reader x, int length) throws SQLException {
+public void updateCharacterStream(int columnIndex, Reader x, int length) throws SQLException {
 	s.updateCharacterStream(columnIndex,x,length);
 }
 	/**
@@ -1705,7 +1705,7 @@ public void updateCharacterStream(int columnIndex, java.io.Reader x, int length)
 	 * @param length of the stream
 	 * @exception SQLException if a database access error occurs
 	 */
-public void updateCharacterStream(String columnName, java.io.Reader x, int length) throws SQLException {
+public void updateCharacterStream(String columnName, Reader x, int length) throws SQLException {
 	s.updateCharacterStream(columnName,x,length);
 }
     /**
@@ -1719,7 +1719,7 @@ public void updateCharacterStream(String columnName, java.io.Reader x, int lengt
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateClob(int columnIndex, java.sql.Clob x) throws SQLException {
+public void updateClob(int columnIndex, Clob x) throws SQLException {
 	System.err.println("SpatialResultSet.updateClob(int,Clob) is not implemented.");
 }
     /** 
@@ -1733,7 +1733,7 @@ public void updateClob(int columnIndex, java.sql.Clob x) throws SQLException {
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateClob(String columnName, java.sql.Clob x) throws SQLException {
+public void updateClob(String columnName, Clob x) throws SQLException {
 	System.err.println("SpatialResultSet.updateClob(String,Clob) is not implemented.");
 }
 	/**
@@ -2069,7 +2069,7 @@ public void updateObject(String columnName, Object x, int scale) throws SQLExcep
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateRef(int columnIndex, java.sql.Ref x) throws SQLException {
+public void updateRef(int columnIndex, Ref x) throws SQLException {
 	System.err.println("SpatialResultSet.updateRef(int,Ref) is not implemented.");
 }
     /** 
@@ -2083,7 +2083,7 @@ public void updateRef(int columnIndex, java.sql.Ref x) throws SQLException {
      * @param x the new column value
      * @exception SQLException if a database access error occurs
      */
-public void updateRef(String columnName, java.sql.Ref x) throws SQLException {
+public void updateRef(String columnName, Ref x) throws SQLException {
 	System.err.println("SpatialResultSet.updateRef(String,Ref) is not implemented.");
 }
 	/**
@@ -2435,6 +2435,17 @@ public boolean wasNull() throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+		return null;
+	}
+
 	public void updateNClob(int arg0, Reader arg1, long arg2)
 			throws SQLException {
 		// TODO Auto-generated method stub

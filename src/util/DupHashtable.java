@@ -105,7 +105,7 @@ public class DupHashtable extends Dictionary implements Cloneable, java.io.Seria
 	 *             <code>value</code> argument in this DupHashtable;
 	 *             <code>false</code> otherwise.
 	 * @exception  NullPointerException  if the value is <code>null</code>.
-	 * @see        util.DupHashtable#containsKey(java.lang.Object)
+	 * @see        DupHashtable#containsKey(Object)
 	 */
 	public synchronized boolean contains(Object value) {
 	if (value == null) {
@@ -128,7 +128,7 @@ public class DupHashtable extends Dictionary implements Cloneable, java.io.Seria
 	 * @param   key   possible key.
 	 * @return  <code>true</code> if the specified object is a key in this
 	 *          DupHashtable; <code>false</code> otherwise.
-	 * @see     util.DupHashtable#contains(java.lang.Object)
+	 * @see     DupHashtable#contains(Object)
 	 */
 	public synchronized boolean containsKey(Object key) {
 	DupHashtableEntry tab[] = table;
@@ -147,8 +147,8 @@ public class DupHashtable extends Dictionary implements Cloneable, java.io.Seria
 	 * sequentially.
 	 *
 	 * @return  an enumeration of the values in this DupHashtable.
-	 * @see     java.util.Enumeration
-	 * @see     util.DupHashtable#keys()
+	 * @see     Enumeration
+	 * @see     DupHashtable#keys()
 	 */
 	public synchronized Enumeration elements() {
 	return new DupHashtableEnumerator(table, false);
@@ -208,8 +208,8 @@ public synchronized Object getNext (Object key) {
 	 * Returns an enumeration of the keys in this DupHashtable.
 	 *
 	 * @return  an enumeration of the keys in this DupHashtable.
-	 * @see     java.util.Enumeration
-	 * @see     util.DupHashtable#elements()
+	 * @see     Enumeration
+	 * @see     DupHashtable#elements()
 	 */
 	public synchronized Enumeration keys() {
 	return new DupHashtableEnumerator(table, true);
